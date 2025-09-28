@@ -9,6 +9,7 @@ class Animal{
         console.log(`${this._name} makes a sound`)
     }
 }
+
 class Dog extends Animal{
     constructor(name,breed){
         super(name)
