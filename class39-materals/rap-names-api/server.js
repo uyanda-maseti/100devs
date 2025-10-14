@@ -31,8 +31,7 @@ app.get('/', (request, response) => {
 })
 
 app.get('/api/:name', (request, response) => {
-    request.params.name = request.params.name.toLowerCase()
-    console.log(request.params.name)
+    const rapperName = request.params.name.toLowerCase()
     response.json(rappers)
 })
 
