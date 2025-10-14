@@ -18,14 +18,20 @@ const rappers = {
         'age': 26,
         'birthName': 'Nsikayesizwe David Junior Ngcobo',
         'birthLocation': 'Durban, South Africa',
-} 
+    },
+    'unknown': {
+        'age': 0,
+        'birthName': 'unknown',
+        'birthLocation': 'unknown',
+    },
+}
 
 app.get('/', (request, response) => {
     response.sendFile(__dirname + '/index.html')
 })
 
 app.get('/api', (request, response) => {
-    response.json(savage)
+    response.json()
 })
 
 app.listen(PORT, () => {
