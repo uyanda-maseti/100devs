@@ -14,7 +14,7 @@ const rappers = {
         'birthName': 'Chancelor Johnathan Bennett',
         'birthLocation': 'Chicago, Illinois',
     },
-    'Nasty C': {
+    'nasty C': {
         'age': 26,
         'birthName': 'Nsikayesizwe David Junior Ngcobo',
         'birthLocation': 'Durban, South Africa',
@@ -30,8 +30,10 @@ app.get('/', (request, response) => {
     response.sendFile(__dirname + '/index.html')
 })
 
-app.get('/api', (request, response) => {
-    response.json()
+app.get('/api/:name', (request, response) => {
+    request.params.name = request.params.name.toLowerCase()
+    console.log(request.params.name)
+    response.json(rappers)
 })
 
 app.listen(PORT, () => {
